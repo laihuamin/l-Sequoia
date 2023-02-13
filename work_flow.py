@@ -21,7 +21,7 @@ import datetime
 def prepare():
     logging.info("************************ process start ***************************************")
     all_data = ak.stock_zh_a_spot_em()
-    subset = all_data[['代码', '名称']]
+    subset = all_data[['代码', '名称', '总市值', '流通市值']]
     stocks = [tuple(x) for x in subset.values]
     statistics(all_data, stocks)
 
